@@ -1,0 +1,21 @@
+{
+  "name": "gulp-mark",
+  "description": "Mark files",
+  "version": "0.0.0",
+  "repository": "tamtakoe/gulp-mark",
+  "author": "tamtakoe <tamtakoe@gmail.com>",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "concat-with-sourcemaps": "^1.0.0",
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
