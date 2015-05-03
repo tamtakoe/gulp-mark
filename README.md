@@ -37,7 +37,7 @@ Set `mark` if `file.path` contain `pathToken` substring.
 ```js
 var scriptStream = gulp.src('src/**/*.js')
     .pipe(mark.set('script'))
-    .pipe(mark.set('config', name + '/config.js'));
+    .pipe(mark.set('config', '/config.js'));
     
 var styleStream = gulp.src('src/**/*.css')
     .pipe(mark.set('style'));
@@ -144,7 +144,8 @@ This will concat marked files by your operating systems newLine as [gulp-concat]
 ##### files
 Type: `Array`
 
-`files` is array of objects with params of output files like `{path: 'script.js',  marks: ['script', 'config']}`.
+Array of objects with params of each output file like `{path: 'script.js',  marks: ['script', 'config']}`.
+`path` - name of the merged file, `marks` - mark or array of marks.
 This means that we will get the file `script.js` consisting of the files marked as `script` and `config` in the output stream.
 
 #### Usage
@@ -152,7 +153,7 @@ This means that we will get the file `script.js` consisting of the files marked 
 ```js
 finalStream
     .pipe(mark.concat([
-        {path: 'script.js',  marks: ['script', 'template', 'config']},
+        {path: 'script.js', marks: ['script', 'template', 'config']},
         {path: 'style.css', marks: 'style'}
     ]))
     //we will have two files `script.js` and `style.css` in the output stream
@@ -189,8 +190,12 @@ gulp.src('src/**/*')
     .pipe(mark.set('script',   '.js'))
     .pipe(mark.set('template', '.html'))
     .pipe(mark.set('style',    '.css'))
-    .pipe(mark.separateStream(['script', 'template', 'style'], [scriptStream, templateStream, styleStream]));
-//we will have `scriptsStream` with js-files, `templateStream` with .html-files and `styleStream` with .css-files      
+    .pipe(mark.separateStream(
+        ['script',     'template',     'style'],
+        [scriptStream, templateStream, styleStream]
+    ));
+//we will have `scriptsStream` with js-files, `templateStream` with .html-files
+//and `styleStream` with .css-files      
 ```
 
 
