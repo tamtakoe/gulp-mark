@@ -5,13 +5,12 @@
 ## Install with [npm](npmjs.org)
 
 ```sh
-npm i gulp-mark --save-dev
+npm i gulp-mark
 ```
 
 ## Usage
 
 ```js
-var gulp = require('gulp');
 var mark = require('gulp-mark');
 ```
 
@@ -127,7 +126,8 @@ Optional, Stream for `mark.after` to pipe data into when condition is falsey.
 ```js
 series(scriptsStream, templatesStream, configStream, stylesStream) //merged by order
     .pipe(mark.after('template', mark.if('config', gulpAmd({add: 'module/templates'}))));
-    //if files marked as 'template' is in final stream we add 'module/templates' dependency to next config files (if they exists)
+    //if files marked as 'template' is in final stream we add 'module/templates' dependency
+    //to next config files (if they exists)
 ```
 
 
@@ -151,7 +151,10 @@ This means that we will get the file `script.js` consisting of the files marked 
 
 ```js
 finalStream
-    .pipe(mark.concat([{path: 'script.js',  marks: ['script', 'template', 'config']}, {path: 'style.css', marks: 'style'}]))
+    .pipe(mark.concat([
+        {path: 'script.js',  marks: ['script', 'template', 'config']},
+        {path: 'style.css', marks: 'style'}
+    ]))
     //we will have two files `script.js` and `style.css` in the output stream
 ```
 
@@ -183,10 +186,10 @@ var templateStream = through.obj();
 var styleStream    = through.obj();
 
 gulp.src('src/**/*')
-    .pipe(gulpMark.set('script',   '.js'))
-    .pipe(gulpMark.set('template', '.html'))
-    .pipe(gulpMark.set('style',    '.css'))
-    .pipe(gulpMark.separateStream(['script', 'template', 'style'], [scriptStream, templateStream, styleStream]));
+    .pipe(mark.set('script',   '.js'))
+    .pipe(mark.set('template', '.html'))
+    .pipe(mark.set('style',    '.css'))
+    .pipe(mark.separateStream(['script', 'template', 'style'], [scriptStream, templateStream, styleStream]));
 //we will have `scriptsStream` with js-files, `templateStream` with .html-files and `styleStream` with .css-files      
 ```
 
