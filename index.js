@@ -1,7 +1,7 @@
-var setMark                  = require('./setMark');
-var separateStreamFromMarked = require('./separateStreamFromMarked');
-var marked                   = require('./marked');
-var concatMarked             = require('./concatMarked');
+var setMark                  = require('./lib/setMark');
+var separateStreamFromMarked = require('./lib/separateStreamFromMarked');
+var marked                   = require('./lib/marked');
+var concatMarked             = require('./lib/concatMarked');
 
 module.exports = {
     set:      setMark,

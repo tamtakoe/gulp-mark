@@ -1,4 +1,5 @@
 # gulp-mark [![NPM version](https://badge.fury.io/js/gulp-mark.svg)](http://badge.fury.io/js/gulp-mark)
+https://www.npmjs.com/package/gulp-mark
 
 > gulp plugin to mark files.
 

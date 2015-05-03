@@ -5,7 +5,8 @@
   "repository": "tamtakoe/gulp-mark",
   "author": "tamtakoe <tamtakoe@gmail.com>",
   "files": [
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "keywords": [
     "gulpplugin"
