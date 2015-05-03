@@ -3,10 +3,6 @@
   "description": "Mark files",
   "version": "0.0.0",
   "repository": "tamtakoe/gulp-mark",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tamtakoe/gulp-mark.git"
-  },
   "author": "tamtakoe <tamtakoe@gmail.com>",
   "files": [
     "index.js"
@@ -22,5 +18,14 @@
   },
   "engines": {
     "node": ">= 0.10"
+  },
+  "bugs": {
+    "url": "https://github.com/tamtakoe/gulp-mark/issues"
+  },
+  "homepage": "https://github.com/tamtakoe/gulp-mark",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
