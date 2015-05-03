@@ -23,11 +23,13 @@ Set attribute `mark` to vinyl file object. You can read the value as `file.mark`
 
 #### Parameters
 
-##### mark {String}
+##### mark
+Type: `String`
 
 Value of `mark` attribute.
 
 ##### pathToken
+Type: `String`
 
 Set `mark` if `file.path` contain `pathToken` substring.
 
@@ -72,15 +74,18 @@ After data is piped to stream or elseStream or neither, data is piped down-strea
 
 #### Parameters
 
-##### mark {String}
+##### mark
+Type: `String`
 
 Condition for `mark` attribute.
 
 ##### stream
+Type: `Stream`
 
 Stream for `mark.if` to pipe data into when conditon is truthy.
 
 ##### elseStream
+Type: `Stream`
 
 Optional, Stream for `mark.if` to pipe data into when condition is falsey.
 
@@ -102,15 +107,18 @@ As `mark.if` but pipe data to stream for all subsequent files whenever `mark` eq
 
 #### Parameters
 
-##### mark {String}
+##### mark
+Type: `String`
 
 Condition for `mark` attribute.
 
 ##### stream
+Type: `Stream`
 
 Stream for `mark.after` to pipe data into when conditon is truthy.
 
 ##### elseStream
+Type: `Stream`
 
 Optional, Stream for `mark.after` to pipe data into when condition is falsey.
 
@@ -133,7 +141,8 @@ This will concat marked files by your operating systems newLine as [https://gith
 
 #### Parameters
 
-##### files {Array}
+##### files
+Type: `Array`
 
 `files` is array of objects with params of output files like `{path: 'script.js',  marks: ['script', 'config']}`.
 This means that we will get the file `script.js` consisting of the files marked as `script` and `config` in the output stream.
@@ -156,11 +165,13 @@ This will concat marked files by your operating systems newLine as [https://gith
 
 #### Parameters
 
-##### marks {String} or {Array} of strings
+##### marks
+Type: `String` or `Array` of strings
 
 mark or array of marks
 
-##### streams {Stream} or {Array} of streams
+##### streams
+Type: `Stream` or `Array` of streams
 
 stream or array of streams which corresponding marks
 
