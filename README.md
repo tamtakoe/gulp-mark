@@ -5,7 +5,7 @@
 ## Install with [npm](npmjs.org)
 
 ```sh
-npm i gulp-mark
+npm install gulp-mark
 ```
 
 ## Usage
@@ -63,6 +63,8 @@ finalStream.pipe(through.obj(function(file, enc, callback) {
 
 
 ### mark.if(mark, stream [, elseStream])
+
+It is [gulp-if](https://github.com/robrich/gulp-if) for marked files.
 
 It will pipe data to stream for files whenever `mark` equivalent to `file.mark`.
 
@@ -194,8 +196,8 @@ gulp.src('src/**/*')
         ['script',     'template',     'style'],
         [scriptStream, templateStream, styleStream]
     ));
-//we will have `scriptsStream` with js-files, `templateStream` with .html-files
-//and `styleStream` with .css-files      
+//we will have `scriptsStream` with js-files, `templateStream` with html-files
+//and `styleStream` with css-files      
 ```
 
 
