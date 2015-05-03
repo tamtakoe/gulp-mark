@@ -16,7 +16,7 @@ var mark = require('gulp-mark');
 ```
 
 
-
+## API
 ### mark.set(mark [, pathToken])
 
 Set attribute `mark` to vinyl file object. You can read the value as `file.mark`.
@@ -126,7 +126,7 @@ Optional, Stream for `mark.after` to pipe data into when condition is falsey.
 
 ```js
 series(scriptsStream, templatesStream, configStream, stylesStream) //merged by order
-    .pipe(gulpMark.after('template', gulpMark.if('config', gulpAmd({add: 'module/templates'}))));
+    .pipe(mark.after('template', mark.if('config', gulpAmd({add: 'module/templates'}))));
     //if files marked as 'template' is in final stream we add 'module/templates' dependency to next config files (if they exists)
 ```
 
@@ -137,7 +137,7 @@ series(scriptsStream, templatesStream, configStream, stylesStream) //merged by o
 
 ### mark.concat(files)
 
-This will concat marked files by your operating systems newLine as [https://github.com/wearefractal/gulp-concat](gulp-concat).
+This will concat marked files by your operating systems newLine as [gulp-concat](https://github.com/wearefractal/gulp-concat).
 
 #### Parameters
 
@@ -161,7 +161,7 @@ finalStream
 
 ### mark.separateStream(marks, streams)
 
-This will concat marked files by your operating systems newLine as [https://github.com/wearefractal/gulp-concat](gulp-concat).
+Splits the stream with marked files into several streams
 
 #### Parameters
 
