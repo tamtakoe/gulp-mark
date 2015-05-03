@@ -4,9 +4,9 @@ var marked                   = require('./marked');
 var concatMarked             = require('./concatMarked');
 
 module.exports = {
-    set:            setMark,
-    separateStream: separateStreamFromMarked,
-    concat:         concatMarked,
-    if:             marked.if,
-    after:          marked.after
+    set:      setMark,
+    separate: separateStreamFromMarked,
+    concat:   concatMarked,
+    if:       marked.if,
+    after:    marked.after
 };

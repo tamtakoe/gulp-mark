@@ -165,7 +165,7 @@ finalStream
 
 
 
-### mark.separateStream(marks, streams)
+### mark.separate(marks, streams)
 
 Splits the stream with marked files into several streams
 
@@ -192,7 +192,7 @@ gulp.src('src/**/*')
     .pipe(mark.set('script',   '.js'))
     .pipe(mark.set('template', '.html'))
     .pipe(mark.set('style',    '.css'))
-    .pipe(mark.separateStream(
+    .pipe(mark.separate(
         ['script',     'template',     'style'],
         [scriptStream, templateStream, styleStream]
     ));
